@@ -1,0 +1,49 @@
+themoviedb.org 에 회원가입 후 API 발급함
+
+axios를 인스턴스화(객체화) 하여 중복되는 주소를 기재하지 않아도 되게끔 만듦
+url 다음에 path(파일경로) 있고 그 다음이 param 임 (? 뒤에 나오는 내용)
+
+npx create-react-app ./  -- CRA 인스톨
+npm install axios -- axios 인스톨
+
+.env 는 REACT_APP 이라고 꼭 넣어줘야함
+(API키는 노출되면 안 되기 때문에 .env파일을 만들어서 넣어준다.)
+
+requests 인스턴스 만들어서 각각의 path name 들을 속성값으로 넣어줘서 axios.get 할 때 해당 내용을 넣어준다.
+
+jsconfig.json 파일 만들어 절대 경로 설정하기
+
+
+<React 에서 사용하는 CSS>
+
+https://styled-components.com/
+CSS-in-JS 라이브러리. 자바스크립트 내에 CSS 작성하고 컴포넌트에 적용하는 방식. 컴포넌트 단위로 관리. 컴포넌트와 스타일이 분리되어 있어 스타일을 관리하는 데 생산성과 유지보수성이 높음.
+컴포넌트와 스타일이 함께 관리되므로 스타일이 어떤 컴포넌트에서 사용되는지 쉽게 파악할 수 있음. 클래스 네임을 사용하지 않으므로 클래스 네임 충돌 문제를 해결할 수 있음.
+
+https://tailwindcss.com/
+https://emotion.sh/docs/introduction
+
+
+<추가로 넣어야할 내용>
+로그인 페이지
+로그인 들어온 뒤 프로필 페이지 새로 만들기
+App 컴포넌트에 프로필 페이지 추가
+로그아웃 만들기
+
+모달창 열릴 때 트레일러(영상) 나오고 스틸사진 나오게 하기
+more information 누르면 detail 페이지 나오게 하기
+
+검색했을 때 영화 이름 및 기본 정보 추가로 넣기
+검색해서 나온 영화도 detail 페이지 나오게 하기
+detail 페이지에 내용 추가 (트레일러, 스냅샷, 스와이프 기능 추가)
+
+UI 바꾸기(촌스럽지 않게)
+
+
+
+<get방식/post방식>
+get 방식은 주소창에 내용이 노출됨.
+아이디 패스워드는 get 방식으로 쓰면 위험하므로
+post 방식으로 사용함.
+post 방식은 body 안에 숨겨서 사용함.
+

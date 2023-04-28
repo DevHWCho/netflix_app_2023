@@ -1,0 +1,138 @@
+.authContainer {
+  position: relative;
+  width: 100%;
+  height: 1240px;
+  background: url(../styles/nflx_bg.jpg) no-repeat;
+  background-size: cover;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    content: '';
+  }
+
+  .login_nav {
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    background: transparent;
+    
+    img {
+      width: 170px;
+    }
+  }
+
+  .login_box {
+    z-index: 99;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 550px;
+    height: 700px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.8);
+    transform: translateX(-50%);
+  }
+
+  .login_header {
+    position: absolute;
+    top: 80px;
+    left: 140px;
+    font-size: 18px;
+    color: #fff;
+    transform: translateX(-50%);
+  }
+
+  .aContainer {
+    position: absolute;
+    display: block;
+    top: 170px;
+    left: 50%;
+    width: 380px;
+    transform: translateX(-50%);
+  }
+  .authInput {
+    width: 380px;
+    border-radius: 5px;
+    padding-left: 20px;
+    background-color: #333;
+    box-sizing: border-box;
+  }
+  .emailInput {
+    height: 60px;
+    margin-bottom: 20px;
+    border: 0;
+    font-size: 16px;
+    
+  }
+  .pwInput {
+    height: 60px;
+    border: 0;
+    font-size: 16px;
+  }
+  .authSubmit {
+    position: absolute;
+    display: block;
+    top: 180px;
+    left: 50%;
+    width: 380px;
+    height: 60px;
+    border: 0;
+    background-color: #ff0000;
+    font-size: 16px;
+    color: #fff;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  .authSwitch {
+    z-index: 0;
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    width: 140px;
+    height: 50px;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  .authBtns {
+    position: absolute;
+    top: 520px;
+    left: 50%;
+    width: 500px;
+    border: 0;
+    transform: translateX(-50%);
+  }
+  .authBtn {
+    width: 240px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .googleBtn {
+    margin-right: 10px;
+    .googleLogo {
+      color: #F45050;
+    }
+  }
+  .githubBtn {
+    margin-left: 10px;
+    .githubLogo {
+      color: #892CDC;
+    }
+  }
+}

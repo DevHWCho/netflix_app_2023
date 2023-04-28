@@ -1,0 +1,19 @@
+.profileContainer {
+  position: absolute;
+  top: 70px;
+  right: 60px;
+  width: 250px;
+  height: 200px;
+  padding-top: 20px;
+  background-color: rgba(0,0,0,0.7);
+  font-size: 14px;
+  color: #fff;
+}
+.profileBottom {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #333;
+  cursor: pointer;
+}
