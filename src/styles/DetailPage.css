@@ -1,7 +1,7 @@
 .detail_container {
   position: relative;
   height: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
 }
 
 .detail_play {
@@ -24,6 +24,10 @@
 .detail_h2 {
   font-size: 40px;
   text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.detail_h2:nth-of-type(2) {
+  font-size: 24px;
 }
 
 .detail_content {

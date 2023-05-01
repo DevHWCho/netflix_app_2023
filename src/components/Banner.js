@@ -57,7 +57,7 @@ function Banner() {
               <FaPlay />&nbsp;&nbsp;Play
             </button>
             <button className='banner__button info'>
-              <FaInfoCircle />&nbsp;&nbsp;More Information
+              <FaInfoCircle className='more_btn' />&nbsp;&nbsp;More Information
             </button>
           </div>
           <p className='banner__description'>

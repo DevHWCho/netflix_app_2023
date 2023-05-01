@@ -6,10 +6,11 @@ import 'styles/DetailPage.css';
 
 function DetailPage() {
   const [movie, setMovie] = useState({});
+  
   let {movieId} = useParams(); // 주소창에 있는 param값을 가져오는 역할
   // App.js 에서 :movieId라 설정했기 때문에 movieId라고 사용한다.
 
-  // console.log("movieId->", movieId);
+  console.log("movieId->", movieId);
 
   // useEffect(() => { 아래 내용과 비교하기
   //   if(movieId) {
@@ -70,7 +71,7 @@ function DetailPage() {
         <p style={{color:"#fff"}}>{movie.overview}</p>
       </div>
     
-      <span className='detail_close'>X</span>
+      <span className='detail_close' style={{color:"#fff"}}>X</span>
     </section>
   )
 }
