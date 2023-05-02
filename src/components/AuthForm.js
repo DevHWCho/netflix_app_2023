@@ -11,8 +11,8 @@ function AuthForm() {
   const [error, setError] = useState('');
 
   const onChange = (e) => { 
-    console.log('e.target.name->', e.target.name);
-    console.log(e);
+    // console.log('e.target.name->', e.target.name);
+    // console.log(e);
     const {target:{name, value}} = e; 
     if(name === 'email'){
       setEmail(value);
@@ -33,23 +33,23 @@ function AuthForm() {
       }else {
         data = await signInWithEmailAndPassword(authService, email, password); 
       }
-      console.log('data->',data);
+      // console.log('data->',data);
     } catch (error) {
-      console.log('error->',error);
+      // console.log('error->',error);
       setError(error.message);
     }
   }
   const toggleAccount = () => setNewAccount(prev => !prev);
 
   const loginId = document.querySelector("input.emailInput");
-  console.log(loginId);
+  // console.log(loginId);
 
   const loginPw = document.querySelector("input.pwInput");
-  console.log(loginPw)
+  // console.log(loginPw)
 
   function onFocus(e) {
     e.target.parentElement.classList.add('on');
-    console.log("vvvvv",e.target.value);
+    // console.log("vvvvv",e.target.value);
   }
 
   function onBlur(e) {

@@ -24,7 +24,7 @@ const Layout = (props) => { // Layout 함수를 만들어서 컴포넌트처럼 
 function App() { // 중첩 Route. Layout이 자식 요소를 감싸고 있음. 그 감싼 자식을 Outlet을 사용하면 불러와서 사용할 수 있다. 
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log('authService.currentUser ->',authService.currentUser) 
+  // console.log('authService.currentUser ->',authService.currentUser) 
 
   const [userObj, setUserObj] = useState(null);
   // console.log("userObj->",userObj)

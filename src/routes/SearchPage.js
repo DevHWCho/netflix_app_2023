@@ -12,14 +12,14 @@ function SearchPage() {
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   }
-  console.log("useLocation()->",useLocation());
+  // console.log("useLocation()->",useLocation());
 
   let query = useQuery(); // ?q=spiderman
 
   const searchTerm = query.get("q");
   const debounceSearchTerm = useDebounce(searchTerm, 500);
-  console.log('searchTerm->',searchTerm); // spiderman
-  console.log('debounceSearchTerm->',debounceSearchTerm);
+  // console.log('searchTerm->',searchTerm); // spiderman
+  // console.log('debounceSearchTerm->',debounceSearchTerm);
 
   useEffect(() => { // 검색어 입력할 때마다 계속 내용이 뜨기 때문에 성능저하가 생길 수 있다. 따라서 Hook 함수 만들어서 성능을 올린다.
     if(debounceSearchTerm) {
@@ -31,11 +31,11 @@ function SearchPage() {
     try {
       //https://api.themoviedb.org/3/search/movie?&query=
       const request = await axios.get(`/search/movie?include_adult=false&query=${debounceSearchTerm}`);
-      console.log('request->',request);
+      // console.log('request->',request);
       setSearchResults(request.data.results); // spiderman 영화 20개가 들어감
 
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
     }
   }
 

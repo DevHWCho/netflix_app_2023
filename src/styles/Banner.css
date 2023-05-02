@@ -11,6 +11,13 @@ cursor: pointer; outline: none; border: none; font-size: 1rem; font-weight: 700;
 .banner__description{width: 45rem; max-width: 400px; height: 80px; padding-top: 1rem; line-height: 1.3; font-weight: 500; font-size: 1rem;}
 .banner--fadeBottom{height: 7.4rem; background-image: linear-gradient(180deg, transparent, rgba(37,37,37,0.61),#111);}
 
+/* 배너 모달창 */
+.banner_modal .modal-close {color: #fff;}
+.banner_modal .modal__title {color: #fff;}
+.banner_modal .modal__details {color: #fff;}
+.banner_modal .modal__overview {color: #fff;}
+
+
 @media (min-width: 1500px) { /* 1500 ~ 최대 */
   .banner{position: relative; height: 600px;}
   .banner--fadeBottom{position: absolute; bottom: 0; width: 100%;}

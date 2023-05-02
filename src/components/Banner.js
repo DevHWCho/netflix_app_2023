@@ -3,11 +3,15 @@ import axios from 'api/axios';
 import requests from 'api/requests';
 import "styles/Banner.css";
 import styled from 'styled-components';
-import { FaInfo, FaInfoCircle, FaPlay } from 'react-icons/fa';
+import { FaInfoCircle, FaPlay } from 'react-icons/fa';
+import MovieModal from './MovieModal';
 
 function Banner() {
   const [movie, setMovie] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
+  // console.log("movie........", movie)
+  const [modalOpen, setModalOpen] = useState(false);
+  const [movieSelected, setMovieSelected] = useState({});
 
 
   useEffect(() => {
@@ -17,7 +21,7 @@ function Banner() {
   const fetchData = async () => {
     //현재 상영 중인 영화 정보 가져오기 (20개 영화)
     const request = await axios.get(requests.fetchNowPlaying);
-    console.log("request->",request);
+    // console.log("request->",request);
 
     // 현재 상영 중인 영화 하나의 ID를 랜덤하게 가져오기
     const movieId = request.data.results[
@@ -30,7 +34,7 @@ function Banner() {
     const {data:movieDetail} = await axios.get(`/movie/${movieId}`,{// data의 내용을 movieDetail이라는 변수에 저장함. (이름 지정한 것임)
       params : {append_to_response: "videos"}
     });
-    console.log("movieDetail->",movieDetail)
+    // console.log("movieDetail->",movieDetail)
     setMovie(movieDetail);
   }
 
@@ -39,33 +43,47 @@ function Banner() {
     // optional 연산자 (기본값: str.length / Optional: str?.length) - str 값이 없어도 error(undefined)가 뜨지 않는다. (물음표 붙인 것이 optional 연산자임)
   }
 
+  const handleClick = () => {
+    setModalOpen(true);
+    setMovieSelected(movie);
+    console.log('movie->',movie);
+  } 
+
   // 참고 https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
   if(!isClicked){
     return (
-      <header className='banner' style={{
-        backgroundImage:`url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`, 
-        backgroundPosition: 'top center', 
-        backgroundSize: "cover"
-        }}>
-        <div className='banner__contents'>
-          <h1 className='banner__title'>
-            {/* null 병합연산자(||) - 속성값이 null이나 undefined 가 있으면 다른 걸 실행하도록 함 */}
-            {movie.title || movie.name || movie.original_name}
-          </h1>
-          <div className='banner__buttons'>
-            <button className='banner__button play' onClick={() => setIsClicked(true)}>
-              <FaPlay />&nbsp;&nbsp;Play
-            </button>
-            <button className='banner__button info'>
-              <FaInfoCircle className='more_btn' />&nbsp;&nbsp;More Information
-            </button>
+      <>
+        <header className='banner' style={{
+          backgroundImage:`url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`, 
+          backgroundPosition: 'top center', 
+          backgroundSize: "cover"
+          }}>
+          <div className='banner__contents'>
+            <h1 className='banner__title'>
+              {/* null 병합연산자(||) - 속성값이 null이나 undefined 가 있으면 다른 걸 실행하도록 함 */}
+              {movie.title || movie.name || movie.original_name}
+            </h1>
+            <div className='banner__buttons'>
+              <button className='banner__button play' onClick={() => setIsClicked(true)}>
+                <FaPlay />&nbsp;&nbsp;Play
+              </button>
+              <button className='banner__button info' onClick={() => handleClick(true)}>
+                <FaInfoCircle className='more_btn' />&nbsp;&nbsp;More Information
+              </button>
+            </div>
+            <p className='banner__description'>
+              {truncate(movie.overview, 100)}
+            </p>
           </div>
-          <p className='banner__description'>
-            {truncate(movie.overview, 100)}
-          </p>
+          <div className='banner--fadeBottom'></div>
+        </header>
+      
+        <div className='banner_modal'>
+          {modalOpen && (
+            <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
+          )}
         </div>
-        <div className='banner--fadeBottom'></div>
-      </header>
+      </>
     )
   }else{
     return (

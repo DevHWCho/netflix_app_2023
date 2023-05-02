@@ -6,11 +6,11 @@ import 'styles/DetailPage.css';
 
 function DetailPage() {
   const [movie, setMovie] = useState({});
-  
+
   let {movieId} = useParams(); // 주소창에 있는 param값을 가져오는 역할
   // App.js 에서 :movieId라 설정했기 때문에 movieId라고 사용한다.
 
-  console.log("movieId->", movieId);
+  // console.log("movieId->", movieId);
 
   // useEffect(() => { 아래 내용과 비교하기
   //   if(movieId) {
@@ -37,7 +37,7 @@ function DetailPage() {
 
   const fetchData = async () => {
     const request = await axios.get(`/movie/${movieId}`); // get방식은 주소창을 통해 정보를 주고 받음. 아이디/비번은 axios.post로 처리.
-    console.log("request->",request);
+    // console.log("request->",request);
     setMovie(request.data);
   }
 

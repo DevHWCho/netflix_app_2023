@@ -11,7 +11,7 @@ import Footer from 'components/Footer';
 
 function Auth() {
   const onSocialClick = async (e) => {
-    console.log('e.target.name->',e.target.name);
+    // console.log('e.target.name->',e.target.name);
     const {target:{name}} = e;
     let provider;
     if(name === "google"){
@@ -20,7 +20,7 @@ function Auth() {
       provider = new GithubAuthProvider();
     }
     const data = await signInWithPopup(authService, provider);
-    console.log('data->',data);
+    // console.log('data->',data);
   }
 
   return (
