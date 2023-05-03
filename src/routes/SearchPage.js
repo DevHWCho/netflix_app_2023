@@ -42,9 +42,14 @@ function SearchPage() {
   const renderSearchResults = () => {
     return searchResults.length > 0 ? (
       <section className='search-container'>
+        <div className='results__text'>
+          <p>
+            "{searchTerm}" 에 대한 검색결과
+          </p>
+        </div>
         {searchResults.map(movie => {
           if(movie.backdrop_path !== null && movie.media_type !== "person"){
-            const movieImageUrl = "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
+            const movieImageUrl = "https://image.tmdb.org/t/p/w300" + movie.backdrop_path;
               return (// key값이랑 내용 넣어야 함. Link to 대신 useNavigate를 사용해서 주소창 이름을 변경해서 한 페이지에 계속 다른 DetailPage가 나오게 할 수 있다.
                 <div className='movie'>
                   <div className='movie__column-poster' onClick={() => navigate(`/${movie.id}`)}>
@@ -52,7 +57,7 @@ function SearchPage() {
                   </div>
                 </div>
               )
-          }
+            }
         })}
       </section>
     ) : (

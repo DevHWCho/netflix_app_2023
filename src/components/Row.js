@@ -14,6 +14,7 @@ function Row({isLargeRow, title, id, fetchUrl}) {
   const [movies, setMovies] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [movieSelected, setMovieSelected] = useState({});
+  const [genresArray, setGenreArray] = useState([]);
 
   useEffect(() => {
     fetchMovieData();
@@ -22,24 +23,28 @@ function Row({isLargeRow, title, id, fetchUrl}) {
   const fetchMovieData = async () => {
     const request = await axios.get(fetchUrl);
     setMovies(request.data.results);
-    // console.log('request->', request)
+    console.log('request->', request)
   }
 
   const handleClick = (movie) => {
     setModalOpen(true);
     setMovieSelected(movie);
-    console.log('movie->',movie);
+    // console.log('movie->',movie);
   } 
+
+  useEffect(() => {
+    fetchGenreData();
+  },[]);
+
+  const fetchGenreData = async () => {
+    const getGenres = await axios.get(`/genre/movie/list?`);
+    // console.log("getGenres->",getGenres.data.genres)
+    setGenreArray(getGenres.data.genres);
+  }
 
   return (
     <section className='row' key={id}>
       <h2>{title}</h2>
-      {/* <div className='slider'>
-        <div className='slider__arrow left'>
-          <span className='arrow' onClick={() => {document.getElementById(id).scrollLeft -= (window.innerWidth - 80);}}>
-           {"<"}
-          </span>
-        </div> */}
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         navigation // arrow 버튼 사용 유무
@@ -75,6 +80,20 @@ function Row({isLargeRow, title, id, fetchUrl}) {
               loading='lazy'
               alt={movie.title || movie.name || movie.original_name}
             />
+            <div className='row_text_container'>
+              <div className='row_text_content'>
+                <h2 className='row_title'>{movie.title || movie.name || movie.original_name}</h2>
+                <div className='row_genres'>
+                {movie.genre_ids && movie.genre_ids.map((id) => (
+                  genresArray.find((g) => g.id === id)?.name && (
+                    <p key={id} className='row_genre'>
+                      {genresArray.find((g) => g.id === id)?.name}
+                    </p>
+                  )
+                ))}
+                </div>
+              </div>
+            </div>
           </SwiperSlide>
          ))}
         </div>

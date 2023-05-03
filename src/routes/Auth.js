@@ -1,11 +1,11 @@
 import 'styles/Auth.scss';
 import { GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
-import { async } from '@firebase/util';
+// import { async } from '@firebase/util';
 import { authService } from "../fireB";
 import AuthForm from "../components/AuthForm";
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { FaGithub, FaGoogle, IconName } from "react-icons/fa";
+// import { useNavigate } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import Footer from 'components/Footer';
 
 

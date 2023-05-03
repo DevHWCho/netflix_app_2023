@@ -24,6 +24,8 @@ cursor: pointer; outline: none; border: none; font-size: 1rem; font-weight: 700;
 }
 
 @media (max-width: 768px) { /* 0 ~ 768 */
+  .banner__title {font-size: 2rem; word-break: keep-all;}
+
   .banner__contents{width: min-content !important; padding-left: 2.3rem; margin-left: 0px !important;}
   .banner__description{font-size: 0.8rem !important; width: auto !important;}
   .banner__button{font-size: 0.8rem !important; border-radius: 4px !important;}

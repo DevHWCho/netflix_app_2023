@@ -1,5 +1,6 @@
 import { authService } from 'fireB';
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import "styles/ProfileModal.css";
 
 function ProfileModal(props) {
@@ -15,7 +16,7 @@ function ProfileModal(props) {
       <div></div>
       <div className='profileTop'>
         <ul>
-          <li>프로필 관리</li>
+          <li><Link to="profile">프로필 관리</Link></li>
           <li>계정</li>
         </ul>
       </div>

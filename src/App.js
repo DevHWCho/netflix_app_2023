@@ -7,6 +7,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Auth from "routes/Auth";
 import DetailPage from "routes/DetailPage";
 import MainPage from "routes/MainPage";
+import ProfilePage from "routes/ProfilePage";
 import SearchPage from "routes/SearchPage";
 import "styles/App.css";
 
@@ -51,6 +52,7 @@ function App() { // 중첩 Route. Layout이 자식 요소를 감싸고 있음. �
           <Route index element={<MainPage />} />
           <Route path=":movieId" element={<DetailPage />} />
           <Route path="search" element={<SearchPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
         ) : (
           <>
