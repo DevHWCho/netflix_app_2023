@@ -14,12 +14,6 @@
   background-color: #fff;
   text-align: center;
   line-height: 35px;
-  cursor: pointer;
-  transition: all 0.5s ease 0s;
-}
-
-.detail_play:hover {
-  background-color: #bbb;
 }
 
 .detail_title_container {
@@ -57,9 +51,7 @@
   border-radius: 2px;
 }
 
-.detail_close {position: absolute; top: 80px; left: 40px; font-size: 24px; cursor: pointer; transition: all 0.5s ease 0s;}
-.detail_close:hover {color: #ef3333;}
-
+.detail_close {position: absolute; top: 80px; left: 40px; font-size: 24px;}
 
 @media screen and (max-width: 600px) {
   .detail_h2 {
