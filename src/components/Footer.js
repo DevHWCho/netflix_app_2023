@@ -14,7 +14,7 @@ function Footer() {
             <FooterLink href="https://help.netflix.com/ko">이용 약관</FooterLink>
           </FooterLinkContent>
           <FooterDescContainer>
-            <FooterDescRights>Netflix Rights Reserved.</FooterDescRights>
+            <FooterDescRights>Fakeflix Rights Reserved.</FooterDescRights>
           </FooterDescContainer>
         </FooterLinkContainer>
       </FooterContent>
