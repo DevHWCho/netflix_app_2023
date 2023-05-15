@@ -22,7 +22,7 @@ function ProfileModal(props) {
       </div>
       <div className='profileBottom'>
         <ul>
-          <li className='logout' onClick={onLogOutClick}>페이크플릭스에서 로그아웃</li>
+          <li className='logout' onClick={onLogOutClick}>무비앱에서 로그아웃</li>
         </ul>
       </div>
     </div>

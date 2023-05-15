@@ -26,7 +26,7 @@ function Auth() {
   return (
     <div className='authContainer'>
       <nav className="login_nav">
-        <img src={require('../images/LOGO.png')} alt='Netflix logo' className='nav__logo' onClick={() => {window.location.href = "/netflix_app_2023"}} />
+        <img src={require('../styles/images/logo.png')} alt='movie app logo' className='nav__logo' onClick={() => {window.location.href = "/mv_app"}} />
       </nav>
       <div className='login_box'>
         <header className='login_header'>
@@ -49,7 +49,6 @@ function Auth() {
               <FaGithub />
             </span>
           </button>
-          <div className='page_description'>&nbsp;이 사이트는 개인 portfolio 작업을 위한 사이트로 실제 Netflix 사이트가 아닙니다. Netflix 정보는 Netflix 사이트를 이용하시기 바랍니다. Netflix 계정 정보를 입력하지 마시기 바랍니다.</div>
         </div>
       </div>
       <div className='footer'>
