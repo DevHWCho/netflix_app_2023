@@ -14,7 +14,7 @@ import "styles/App.css";
 
 const Layout = (props) => { // Layout 함수를 만들어서 컴포넌트처럼 사용한다.
   return (// Outlet --> React-Route-Dom의 함수 중 하나; 부모 경로 요소에서 <Outlet>을 사용하면 자식 경로 요소를 렌더링 할 수 있다. Outlet 자리에는 Layout의 자식인 MainPage, DetailPage, SearchPage가 온다.
-    <div>
+    <div className="app_container">
       <Nav props={props} />
       <Outlet />
       <Footer />

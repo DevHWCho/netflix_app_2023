@@ -40,7 +40,12 @@ function Row({isLargeRow, title, id, fetchUrl}) {
     const getGenres = await axios.get(`/genre/movie/list?`);
     // console.log("getGenres->",getGenres.data.genres)
     setGenreArray(getGenres.data.genres);
+
+    
+
   }
+
+
 
   return (
     <section className='row' key={id}>

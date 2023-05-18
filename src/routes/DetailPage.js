@@ -1,6 +1,7 @@
 import axios from 'api/axios';
+import axiosImg from 'api/axiosImg';
 import React, { useEffect, useState } from 'react'
-import { FaPlay, FaTimesCircle } from 'react-icons/fa';
+import { FaAngleLeft, FaPlay, FaTimesCircle } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import 'styles/DetailPage.css';
@@ -9,6 +10,8 @@ function DetailPage() {
   const [movie, setMovie] = useState({});
   const [movies, setMovies] = useState({});
   const [isClicked, setIsClicked] = useState(false);
+  const [koPosters, setKoPosters] = useState([]);
+
   const navigate = useNavigate();
 
   let {movieId} = useParams(); // 주소창에 있는 param값을 가져오는 역할
@@ -28,7 +31,24 @@ function DetailPage() {
     });
     console.log("movieDetail->",movieDetail)
     setMovies(movieDetail);
-  }
+
+
+   
+    const {data:movieImgs} = await axiosImg.get(`/movie/${movieId}`,{
+      params : {append_to_response: "images"}
+    });
+    console.log("images",movieImgs);
+
+    const moviePics = { ...movieDetail, images: movieImgs.images }
+    console.log("moviedetail",moviePics)
+
+    const koPosters = movieImgs.images.posters.filter(
+      (posters) => posters.iso_639_1 === 'ko'
+    );
+
+    setKoPosters(koPosters);
+    console.log("koPosters",koPosters)
+  };
 
   const detail_close = () => {
     navigate(-1)
@@ -62,11 +82,23 @@ function DetailPage() {
             ))}
           </div>
           <br />
-          <p style={{color:"#fff"}}>{movie.overview}</p>
+          <p className='overview_text' style={{color:"#fff"}}>{movie.overview}</p>
+          {koPosters.length ? (
+            <div className='detail_posters'>
+            <h3>Posters</h3>
+            <ul>
+              {koPosters.map((poster, index) => (
+                <li key={index}>
+                  <img src={`https://image.tmdb.org/t/p/original/${poster.file_path}`} alt='poster' width='100%' />
+                </li>
+              ))}
+            </ul>
+          </div>
+          ) : null}
         </div>
       
         <span style={{color:"#fff"}} onClick={detail_close} >
-          <FaTimesCircle className='detail_close'/>
+          <FaAngleLeft className='detail_close'/>
         </span>
       </section>
     )
