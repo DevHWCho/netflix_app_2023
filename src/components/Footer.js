@@ -23,17 +23,19 @@ function Footer() {
 }
 
 const FooterContainer = styled.div`
+  z-index: 100;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0;
+  width: 100%;
   margin-top: 400px;
   padding: 40px 0;
+  background-color: #151515;
   box-sizing: border-box;
   border-top: 1px solid rgb(25, 25, 25);
-  width: 100%;
-  position: relative;
-  z-index: 100;
-
+  
   @media (max-width: 768px) {
     padding: 20px 20px 30px;
   }

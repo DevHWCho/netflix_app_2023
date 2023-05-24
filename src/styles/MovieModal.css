@@ -1,10 +1,11 @@
 .presentation{z-index: 1200; position: absolute;}
 .wrapper-modal{display: flex; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.71);}
-.modal{position: relative; overflow: hidden; max-width: 800px; background: #111; border-radius: 8px; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); animation: fadeIn 400ms ease 0s;}
+.modal{overflow-y: scroll !important; position: relative; overflow: hidden; max-width: 800px; background: #111; border-radius: 8px; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12); animation: fadeIn 400ms ease 0s;}
 @keyframes fadeIn {
   0% {opacity: 0; transform: scale(0.5);}
   100% {opacity: 1; transform: scale(1);}
 }
+.modal::-webkit-scrollbar{display: none;}
 .modal-close{z-index: 1000; position: absolute; top: 20px; right: 20px; cursor: pointer; transition: all .5s ease 0s;}
 .modal-close:hover {color: #ef3333;}
 

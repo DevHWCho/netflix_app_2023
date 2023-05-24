@@ -1,7 +1,7 @@
 .detail_container {
   position: relative;
   height: 100%;
-  margin-bottom: 300px;
+  margin-bottom: calc(400px + 20vw);
 }
 
 .detail_play {
@@ -60,6 +60,29 @@
 }
 
 .detail_close {position: absolute; top: 80px; left: 40px; font-size: 40px; cursor: pointer;}
+
+.detail_posters {
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #fff;
+  }
+  ul {
+    display: flex;
+    gap: 10px;
+    padding-left: 0;
+    // border: 1px solid yellow;
+    li {
+      width: 20vw;
+      transition: all .5s ease;
+      &:hover {
+        z-index: 101;
+        transform: scale(1.5)
+      }
+    }
+  }
+};
 
 @media screen and (max-width: 600px) {
   .detail_h2 {

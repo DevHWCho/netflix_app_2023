@@ -14,6 +14,11 @@ function MovieModal({setModalOpen,backdrop_path,overview, release_date,first_air
     fetchGenreData();
   },[]);
 
+  const onCloseClick = () =>{
+    setModalOpen(false);
+    document.body.style.overflowY = `unset`;
+  }
+
   const fetchGenreData = async () => {
     const getGenres = await axios.get(`/genre/movie/list?`);
     // console.log("getGenres->",getGenres.data.genres)
@@ -25,7 +30,7 @@ function MovieModal({setModalOpen,backdrop_path,overview, release_date,first_air
     <div className='presentation'>
       <div className='wrapper-modal'>
         <div className='modal' ref={ref}>
-          <span className='modal-close' onClick={() => setModalOpen(false)}><FaTimesCircle style={{fontSize:'24px'}} /></span>
+          <span className='modal-close' onClick={onCloseClick}><FaTimesCircle style={{fontSize:'24px'}} /></span>
           <img className='modal__poster-img' alt={title? title : name} 
           src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} />
           <span className='modal__tagline'>{tagline && (`"${tagline}"`)}</span>

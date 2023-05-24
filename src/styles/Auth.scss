@@ -234,6 +234,12 @@ $errorColor: #54B435;
   color: #ff0000;
 }
 
+.footer {
+  position: absolute !important;
+  width: 100%;
+  bottom: 0 !important;
+}
+
 @media screen and (max-width: 570px) {
   .login_box {
     width: 400px !important;

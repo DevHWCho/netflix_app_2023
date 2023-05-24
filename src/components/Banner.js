@@ -57,6 +57,7 @@ function Banner({fetchUrl}) {
   const handleClick = () => {
     setModalOpen(true);
     setMovieSelected(movie);
+    document.body.style.overflowY = 'hidden';
     // console.log('movie->',movie);
   } 
 

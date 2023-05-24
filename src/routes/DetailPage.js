@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { FaAngleLeft, FaPlay, FaTimesCircle } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import 'styles/DetailPage.css';
+import 'styles/DetailPage.scss';
 
 function DetailPage() {
   const [movie, setMovie] = useState({});
