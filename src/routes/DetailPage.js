@@ -22,7 +22,7 @@ function DetailPage() {
   },[movieId]);
 
   const fetchData = async () => {
-    const request = await axios.get(`/movie/${movieId}`); // get방식은 주소창을 통해 정보를 주고 받음. 아이디/비번은 axios.post로 처리.
+    const request = await axios.get(`/movie/${movieId}`); // get방식은 주소창을 통해 정보를 주고 받음. 아이디/비번은 axios.post로 처리
     // console.log("request->",request);
     setMovie(request.data);
 
